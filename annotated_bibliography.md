@@ -39,3 +39,19 @@ These two YouTube video (has a part one and two) shows how to create a table usi
 [Link](https://www.youtube.com/watch?v=1HN7usMROt8&t=4684s)
 
 This Log-in YouTube video probably serve beyond the scope of this project, but I was extremely interested in learning  how to log-in in a database, as well as creating some of the front-end, as well as handeling the errors.
+
+
+
+### Podfile Installation Video
+
+[Link](https://www.youtube.com/watch?v=MuMZZtQpB6Y)
+
+This is an installation video for a program called Podfile. Podfile allows me to import code from other people, such as the github project right below (Kingfisher).
+
+
+
+### Kingfisher
+[Link](https://github.com/onevcat/Kingfisher)
+
+Kingfisher is an extremely cool program that allows to import images to Swift, using just the URL.
+
