@@ -11,30 +11,54 @@ import Kingfisher
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var searchInput: UITextField!
+    @IBOutlet weak var label: UILabel!
+    
     var list: [Reddit] = [Reddit]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        catchdata()
         imageUpload()
     }
-        func catchdata(){
-            print("test")
-             let url: URL = URL(string: "https://www.reddit.com/r/PrequelMemes/.json")!
+
+
+    @IBAction func searchReddit(_ sender: Any) {
+        if searchInput.text == ""{
+            label.text = "Please type something!"
+        } else{
+            catchdata(input: searchInput.text!)
+        }
+    }
+    
+    func catchdata(input: String){
+            
+             let url: URL = URL(string: "https://www.reddit.com/r/\(input)/.json")!
                 let responseData: Data? = try? Data(contentsOf: url)
                 if let responseData = responseData {
                     let json: Any? = try? JSONSerialization.jsonObject(with: responseData, options: [])
                     if let json = json {
+                        // print(json)
                         let dictionary: [String: Any]? = json as? [String: Any]
+                       // print(dictionary!)
+                       
                         if let dictionary = dictionary {
-                            print(dictionary)
+                            // var movies: [[String:Any]] = dictionary["results"] as! [[String : Any]]
+                           // print(movies)
+                        }
+                        }
+            
+                    
+
+                            
                             //str.hasSuffix("ground")
                             //let movies: String = dictionary["results"] as? String
+                            
+                            //contains "thumbs"
                         }
                     }
-            }
+
+    
         // Do any additional setup after loading the view.
-    }
     
     
     func imageUpload(){
@@ -62,6 +86,12 @@ class ViewController: UIViewController {
         }
     }
 
-
+    func checkSuffix(word:String) -> Bool{
+        if word.hasSuffix(".png"){
+            return true
+        } else{
+            return false
+        }
+    }
 }
 

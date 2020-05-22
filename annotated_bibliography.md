@@ -55,3 +55,21 @@ This is an installation video for a program called Podfile. Podfile allows me to
 
 Kingfisher is an extremely cool program that allows to import images to Swift, using just the URL.
 
+
+### String Ends With (Swift)
+
+[Link](https://stackoverflow.com/questions/32967445/how-to-check-what-a-string-starts-with-prefix-or-ends-with-suffix-in-swift)
+
+Although it is a simple concept, this stackoverflow page teaches the syntax to check the prefix/suffix of a string
+
+
+
+### Json Parsing
+[Link](https://www.avanderlee.com/swift/json-parsing-decoding/)
+
+Even though it kind of serves as a review from the JSON unit covered earlier this year, this article does refresh some memory on the topic, as well as provide some extra information (like formatting)
+
+
+
+
+
