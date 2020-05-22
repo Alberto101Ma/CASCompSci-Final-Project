@@ -70,6 +70,17 @@ Although it is a simple concept, this stackoverflow page teaches the syntax to c
 Even though it kind of serves as a review from the JSON unit covered earlier this year, this article does refresh some memory on the topic, as well as provide some extra information (like formatting)
 
 
+### Json Parsing Video
+[Link](https://www.youtube.com/watch?v=XZS-eeO9YoU)
+
+This YouTube video, kind of like the link above, shows how to parse JSON data, however in a video.
+
+### Another video
+
+[Link](https://www.youtube.com/watch?v=ga0JaI9rgFY)
+
+Another parsing video (more complicated JSON this time)
+
 
 
 
