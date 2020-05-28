@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/albertomancarella/Documents/Github/CASCompSci-Final-Project/APIProject/APIProject/Reddit.swift">
+   </FileRef>
+   <FileRef
       location = "group:APIProject.xcodeproj">
    </FileRef>
    <FileRef

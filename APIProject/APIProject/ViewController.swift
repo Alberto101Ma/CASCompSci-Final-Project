@@ -32,31 +32,28 @@ class ViewController: UIViewController {
         }
     }
     
-    func catchdata(input: String){
+
             
-             let url: URL? = URL(string: "https://www.reddit.com/r/\(input)/.json")
-        //if url! == nil{
-        //label.text = "Redit page not found!"
-    //}
-                let responseData: Data? = try? Data(contentsOf: url!)
-                if let responseData = responseData {
-                    let json: Any? = try? JSONSerialization.jsonObject(with: responseData, options: [])
-                 
-                    if let json = json {
-                         //print(json)
-                        let dictionary: [String: Any]? = json as? [String: Any]
-                        //print(dictionary)
-                        if let dictionary = dictionary{
-                            var movies = dictionary["data"] as? [String: Any] //dictionary
-                            var x = (movies?["children"] as! [[String: Any]] )
-                            //work-in-progress
-                          //  var y = x[thumbnail] as! [Any: String]
-                         //   print(movies!)
-                  
+      func catchdata(input: String){
+                         
+                          let urlString = "https://www.reddit.com/r/\(input)/.json"
+                         let url = URL(string: urlString)
+                     let session = URLSession.shared
+                     let dataTask = session.dataTask(with: url!) { (data, response, error) in
+                         
+                         if error == nil && data != nil{
+                             let decoder = JSONDecoder()
+                             
+                             do{
+                            let thumbnails = try decoder.decode(Reddit.self, from: data!)
+                             print(thumbnails)
+                         }
+                             catch{
+                                 print("error in JSON Parsing")
+             }
                         }
-                    }
         }
-    }
+        }
 
     
         // Do any additional setup after loading the view.
