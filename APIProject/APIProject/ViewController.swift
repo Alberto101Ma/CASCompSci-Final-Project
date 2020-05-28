@@ -53,8 +53,8 @@ class ViewController: UIViewController {
              }
                         }
         }
-        }
-
+        dataTask.resume()
+    }
     
         // Do any additional setup after loading the view.
     

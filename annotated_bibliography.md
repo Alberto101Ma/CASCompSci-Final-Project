@@ -83,4 +83,6 @@ Another parsing video (more complicated JSON this time)
 
 
 
-
+### Inheritance
+[Link](https://stackoverflow.com/questions/47721161/swift-4-nested-json-struct-codable)
+This stackoverflow article explains how to create a class, used to extract information from JSON that is nested.
