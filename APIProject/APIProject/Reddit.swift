@@ -9,9 +9,19 @@ import Foundation
 
 
 
-class Reddit: Codable{
-    var thumbnail: String
-    init(thumbnail: String) {
-        self.thumbnail = thumbnail
+struct Reddit: Decodable {
+    
+    let data: String
+    let child: child
+    
+    private enum content: String, CodingKey{
+       
+        case data = "data"
+        case child
     }
+}
+
+struct child: Decodable{
+    let city: String
+    
 }

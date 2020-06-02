@@ -14,12 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var label: UILabel!
     
-    var list: [Reddit] = [Reddit]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = ""
-        imageUpload()
+  
         catchdata(input: "PrequelMemes")
     }
 
@@ -35,26 +34,30 @@ class ViewController: UIViewController {
 
             
       func catchdata(input: String){
-                         
-                          let urlString = "https://www.reddit.com/r/\(input)/.json"
-                         let url = URL(string: urlString)
-                     let session = URLSession.shared
-                     let dataTask = session.dataTask(with: url!) { (data, response, error) in
-                         
-                         if error == nil && data != nil{
-                             let decoder = JSONDecoder()
+       
+                                   let url: URL? = URL(string: "https://www.reddit.com/r/PrequelMemes/.json")
+
+                                  let responseData: Data? = try? Data(contentsOf: url!)
+                                  if let responseData = responseData {
+                                      let json: Any? = try? JSONSerialization.jsonObject(with: responseData, options: [])
+                                      if let json = json {
+                                        
+                                        do{
+                                            let student = try JSONDecoder().decode(Data.self, from: Reddit)
+                                            
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                         
+                                        
+                                      }
+                                  else{
+                                   print("test")
+                           }
+                             }
                              
-                             do{
-                            let thumbnails = try decoder.decode(Reddit.self, from: data!)
-                             print(thumbnails)
-                         }
-                             catch{
-                                 print("error in JSON Parsing")
-             }
-                        }
-        }
-        dataTask.resume()
-    }
     
         // Do any additional setup after loading the view.
     

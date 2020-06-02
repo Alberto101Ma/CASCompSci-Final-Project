@@ -86,3 +86,20 @@ Another parsing video (more complicated JSON this time)
 ### Inheritance
 [Link](https://stackoverflow.com/questions/47721161/swift-4-nested-json-struct-codable)
 This stackoverflow article explains how to create a class, used to extract information from JSON that is nested.
+
+
+ ### JSON Viewer
+ [Link](http://jsonviewer.stack.hu/#http://www.reddit.com/r/PrequelMemes/.json)
+ This is a cool website that maps out the reddit PrequelMemes page (I'm just using that as an example) json. That way, I much identify the inheritance. It very clearly shows what is inside what
+ 
+ 
+ ###   Codables Guide
+ [Link](https://medium.com/flawless-app-stories/json-parsing-with-codable-in-swift-4bc516d99d8c)
+ 
+ This is the final Codables guide I will need, as it clearly explains how the "inheritance" works in both the swift struct, as well as when accessing the JSON in the ViewController.
+ 
+ 
+ ### JSON Example
+ [Link](https://hackersandslackers.com/extract-data-from-complex-json-python/)
+ 
+ I'm just using this JSON example as practice.
