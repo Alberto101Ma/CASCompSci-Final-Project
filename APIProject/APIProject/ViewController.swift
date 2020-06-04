@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var inputReddit: UITextField!
@@ -20,15 +21,29 @@ class ViewController: UIViewController {
     typealias MutipleValue = (title: String, thumbnail: String, text: String)
     var RedditInfo = [String: MutipleValue]()
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        stepper.transform.scaledBy(x: 10, y: 10)
+        self.inputReddit.delegate = self
         RedditTitle.text = ""
         hide()
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        RedditInfo.removeAll()
+        catchdata(input: inputReddit.text!)
+        imageView.isHidden = false
+           self.view.endEditing(true)
+           return false
+       }
+    
     func hide(){
         RedditText.text = ""
-        imageView.isHidden = true
+        imageView.image = nil
         pageNumber.isHidden = true
         stepper.isHidden = true
     }
