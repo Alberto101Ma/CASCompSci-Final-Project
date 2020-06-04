@@ -103,3 +103,23 @@ This stackoverflow article explains how to create a class, used to extract infor
  [Link](https://hackersandslackers.com/extract-data-from-complex-json-python/)
  
  I'm just using this JSON example as practice.
+
+
+
+### Array Review
+
+[Link](https://stackoverflow.com/questions/31623505/creating-array-of-dictionary-in-swift)
+
+
+### Operators Review
+[Link](https://www.tutorialspoint.com/swift/swift_logical_operators.htm)
+
+
+### How to remove an image
+[Link](https://iflexus.wordpress.com/2011/04/05/removing-image-from-uiimageview/)
+
+
+
+### Cocopods Uninstaller
+[Link](https://medium.com/app-makers/how-to-remove-cocoapods-from-xcode-project-5166c19152)
+

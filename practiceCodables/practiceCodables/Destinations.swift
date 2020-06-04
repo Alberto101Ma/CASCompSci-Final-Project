@@ -11,22 +11,26 @@ import Foundation
 struct Destinations: Decodable{
     let addresses: Array<String>
     let origin: Array<String>
-   // let rows: Rows
-   
-    
-    
-    
+   let rows: [Rows]
+       
     private enum CodingKeys: String, CodingKey{
         case addresses = "destination_addresses"
         case origin = "origin_addresses"
-       // case rows
-
+        case rows = "rows"
         
-
     }
 }
 
+struct Rows: Decodable {
+    let elements: [Elements]
+}
 //
-//struct Rows: Decodable{
-//    let elements: String
-//}
+//
+struct Elements: Decodable{
+    let distance: Distance
+    
+}
+
+struct Distance: Decodable{
+    let text: String
+}

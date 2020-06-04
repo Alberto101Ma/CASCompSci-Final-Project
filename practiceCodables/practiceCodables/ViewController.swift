@@ -27,11 +27,9 @@ class ViewController: UIViewController {
 
                 do{
                     let employee = try? JSONDecoder().decode(Destinations.self, from: data)
+                    print(employee!.rows[1].elements[0].distance.text)
 
-                    
-                    print(employee!.addresses)
-                    print(employee!.origin)
-                
+        
                     
 
                 }

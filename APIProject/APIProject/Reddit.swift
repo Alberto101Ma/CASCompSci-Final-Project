@@ -11,17 +11,32 @@ import Foundation
 
 struct Reddit: Decodable {
     
-    let data: String
-    let child: child
+    let kind: String
+    let data: data
     
-    private enum content: String, CodingKey{
-       
-        case data = "data"
-        case child
+    private enum test: String, CodingKey{
+        case data 
+        case kind
     }
 }
 
-struct child: Decodable{
-    let city: String
-    
+struct data: Decodable{
+    let modhash: String
+    let dist: Int
+    let children: [Children]
 }
+
+struct Children: Decodable{
+    let kind: String
+    let data: AllData
+}
+
+struct AllData: Decodable{
+    let thumbnail: String
+    let title: String
+    let selftext: String
+}
+
+
+
+
