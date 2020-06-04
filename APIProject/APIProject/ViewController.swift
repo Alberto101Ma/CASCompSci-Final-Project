@@ -99,9 +99,13 @@ class ViewController: UIViewController {
         pageNumber.text = "\(input+1)/\(max+1)"
         stepper.maximumValue = Double(max+1)
         stepper.minimumValue = 1
-    
-        imageView.image = nil
-        setImage(from:"\(RedditInfo["post\(input)"]!.thumbnail)")
+        if checkSuffix(word: "\(RedditInfo["post\(input)"]!.thumbnail)") == true{
+            imageView.image = nil
+            setImage(from:"\(RedditInfo["post\(input)"]!.thumbnail)")
+        }
+        else{
+            imageView.image = nil
+        }
 }
 
     
