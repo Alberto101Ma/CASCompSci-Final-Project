@@ -37,9 +37,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         RedditInfo.removeAll()
         catchdata(input: inputReddit.text!)
         imageView.isHidden = false
-           self.view.endEditing(true)
-           return false
-       }
+        self.view.endEditing(true)
+        return false
+    }
     
     func hide(){
         RedditText.text = ""
@@ -59,7 +59,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if inputReddit.text == ""{
             hide()
             RedditTitle.text = "You gotta type something!"
-            
             return
         } else{
             let url: URL? = URL(string: "https://www.reddit.com/r/\(inputReddit.text!)/.json")
@@ -70,18 +69,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let responseData = responseData {
                 let json: Any? = try? JSONSerialization.jsonObject(with: responseData, options: [])
                 if let json = json {
-                    
                     do{
                         let decodeReddit = try? JSONDecoder().decode(Reddit.self, from: responseData)
-                        
                         if decodeReddit == nil{
                             hide()
                             RedditTitle.text = "Sub-Reddit Not Found!"
-                            
                             return
                         }
                         let children = decodeReddit!.data.children
-                        
                         if children.count == 0{
                             hide()
                             RedditTitle.text = "Sub-Reddit Not Found! "
@@ -90,14 +85,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         } else{
                             for x in 0...children.count-1 {
                                 RedditInfo["post\(x)"] = MutipleValue(title: children[x].data.title, thumbnail: children[x].data.thumbnail, text: children[x].data.selftext)
-                                
                             }
                             
                             changeScreen(input: 0)
                             stepper.value = 1
                         }
                     }
+                } else{
                 }
+            }
+            if responseData == nil{
+                hide()
+                RedditTitle.text = "Sub-Reddit Not Found!"
             }
         }
     }
@@ -121,15 +120,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else{
             imageView.image = nil
         }
-}
-
+    }
+    
     
     @IBAction func changePage(_ sender: UIStepper) {
         var allKeys = (Array(RedditInfo.keys))
         let max = (allKeys.count - 1)
         pageNumber.text = "\(Int(sender.value).description)/\(max+1)"
         changeScreen(input: Int(sender.value-1))
-        
     }
     
     func setImage(from url: String) {
@@ -140,7 +138,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // just not to cause a deadlock in UI!
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: imageURL) else {
-
+                
                 return }
             
             let image = UIImage(data: imageData)
