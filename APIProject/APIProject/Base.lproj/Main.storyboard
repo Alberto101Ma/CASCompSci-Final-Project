@@ -54,18 +54,18 @@
                                     <action selector="changePage:" destination="BYZ-38-t0r" eventType="valueChanged" id="7nA-HB-m4G"/>
                                 </connections>
                             </stepper>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fry-A0-sog">
-                                <rect key="frame" x="0.0" y="44" width="415" height="34"/>
-                                <viewLayoutGuide key="safeArea" id="2Er-JJ-2gn"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k9-1a-Duw">
                                 <rect key="frame" x="20" y="482" width="365" height="171"/>
                                 <connections>
                                     <segue destination="Vo9-CD-BNs" kind="show" identifier="transition" id="jcj-qb-aga"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fry-A0-sog">
+                                <rect key="frame" x="0.0" y="20" width="415" height="34"/>
+                                <viewLayoutGuide key="safeArea" id="2Er-JJ-2gn"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="search" smartDashesType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -86,7 +86,7 @@
                             <constraint firstItem="7y1-UZ-aQb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fkc-Gg-EBr"/>
                             <constraint firstItem="X9d-Av-LA2" firstAttribute="top" secondItem="2k9-1a-Duw" secondAttribute="bottom" constant="37.5" id="fmV-Vm-kC4"/>
                             <constraint firstItem="2k9-1a-Duw" firstAttribute="top" secondItem="cda-0M-xlk" secondAttribute="top" id="n34-ZV-r46"/>
-                            <constraint firstItem="fry-A0-sog" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="omN-Sm-JfV"/>
+                            <constraint firstItem="fry-A0-sog" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="omN-Sm-JfV"/>
                             <constraint firstItem="X9d-Av-LA2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="133" id="p6V-Qv-8Jf"/>
                             <constraint firstItem="orG-CE-jJD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="qca-HE-gg8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RFd-OU-af7" secondAttribute="bottom" constant="12" id="tEq-Hh-vYD"/>
@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCy-FW-YBH">
-                                <rect key="frame" x="20" y="64" width="374" height="787"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -128,10 +128,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="WCy-FW-YBH" firstAttribute="leading" secondItem="D2T-Ey-2Js" secondAttribute="leadingMargin" id="2EA-up-2bM"/>
-                            <constraint firstItem="WCy-FW-YBH" firstAttribute="top" secondItem="GCN-Au-MKr" secondAttribute="top" constant="20" id="fmZ-9i-082"/>
-                            <constraint firstItem="GCN-Au-MKr" firstAttribute="bottom" secondItem="WCy-FW-YBH" secondAttribute="bottom" constant="11" id="nKc-0E-oNy"/>
-                            <constraint firstItem="WCy-FW-YBH" firstAttribute="trailing" secondItem="D2T-Ey-2Js" secondAttribute="trailingMargin" id="w7l-TI-hAR"/>
+                            <constraint firstItem="WCy-FW-YBH" firstAttribute="centerX" secondItem="D2T-Ey-2Js" secondAttribute="centerX" id="D7j-Md-Ej2"/>
+                            <constraint firstItem="WCy-FW-YBH" firstAttribute="bottom" secondItem="GCN-Au-MKr" secondAttribute="bottom" id="NHu-tP-wct"/>
+                            <constraint firstItem="WCy-FW-YBH" firstAttribute="top" secondItem="GCN-Au-MKr" secondAttribute="top" id="QEp-C7-rOk"/>
+                            <constraint firstItem="WCy-FW-YBH" firstAttribute="leading" secondItem="GCN-Au-MKr" secondAttribute="leading" id="Tab-MS-XBw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GCN-Au-MKr"/>
                     </view>
