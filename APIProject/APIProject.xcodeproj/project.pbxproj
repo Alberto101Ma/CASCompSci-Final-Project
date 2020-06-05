@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		9955F259246C53BB007F3D61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9955F257246C53BB007F3D61 /* Main.storyboard */; };
 		9955F25B246C53BE007F3D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9955F25A246C53BE007F3D61 /* Assets.xcassets */; };
 		9955F25E246C53BE007F3D61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9955F25C246C53BE007F3D61 /* LaunchScreen.storyboard */; };
+		996FB3592489F45F00E3D4C8 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FB3582489F45F00E3D4C8 /* TextViewController.swift */; };
 		99CC9A972488816F00389CA9 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC9A962488816F00389CA9 /* Reddit.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		9955F25A246C53BE007F3D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9955F25D246C53BE007F3D61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9955F25F246C53BE007F3D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		996FB3582489F45F00E3D4C8 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		99CC9A962488816F00389CA9 /* Reddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reddit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 			children = (
 				9955F251246C53BB007F3D61 /* AppDelegate.swift */,
 				9955F253246C53BB007F3D61 /* SceneDelegate.swift */,
+				996FB3582489F45F00E3D4C8 /* TextViewController.swift */,
 				99CC9A962488816F00389CA9 /* Reddit.swift */,
 				9955F255246C53BB007F3D61 /* ViewController.swift */,
 				9955F257246C53BB007F3D61 /* Main.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996FB3592489F45F00E3D4C8 /* TextViewController.swift in Sources */,
 				9955F256246C53BB007F3D61 /* ViewController.swift in Sources */,
 				9955F252246C53BB007F3D61 /* AppDelegate.swift in Sources */,
 				9955F254246C53BB007F3D61 /* SceneDelegate.swift in Sources */,

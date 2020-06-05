@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var inputReddit: UITextField!
+    @IBOutlet weak var transitionButton: UIButton!
     @IBOutlet weak var RedditTitle: UILabel!
     @IBOutlet weak var RedditText: UILabel!
     @IBOutlet weak var pageNumber: UILabel!
@@ -20,15 +20,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var label: UILabel!
     typealias MutipleValue = (title: String, thumbnail: String, text: String)
     var RedditInfo = [String: MutipleValue]()
-    
-    
-    
+    var curText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stepper.transform.scaledBy(x: 10, y: 10)
         self.inputReddit.delegate = self
         RedditTitle.text = ""
+        transitionButton.isEnabled = false
         hide()
     }
     
@@ -41,12 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    func hide(){
-        RedditText.text = ""
-        imageView.image = nil
-        pageNumber.isHidden = true
-        stepper.isHidden = true
-    }
+    
     
     @IBAction func searchReddit(_ sender: Any) {
         RedditInfo.removeAll()
@@ -57,6 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func catchdata(input: String){
         if inputReddit.text == ""{
+            transitionButton.isEnabled = false
             hide()
             RedditTitle.text = "You gotta type something!"
             return
@@ -72,14 +66,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     do{
                         let decodeReddit = try? JSONDecoder().decode(Reddit.self, from: responseData)
                         if decodeReddit == nil{
-                            hide()
-                            RedditTitle.text = "Sub-Reddit Not Found!"
                             return
                         }
                         let children = decodeReddit!.data.children
                         if children.count == 0{
-                            hide()
-                            RedditTitle.text = "Sub-Reddit Not Found! "
+                            error()
                             
                             return
                         } else{
@@ -95,8 +86,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             if responseData == nil{
-                hide()
-                RedditTitle.text = "Sub-Reddit Not Found!"
+                error()
             }
         }
     }
@@ -105,8 +95,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         imageView.isHidden = false
         stepper.isHidden = false
         pageNumber.isHidden = false
-        RedditTitle.text = "\(RedditInfo["post\(input)"]!.title)"
-        RedditText.text = "\(RedditInfo["post\(input)"]!.text)"
+        let post = RedditInfo["post\(input)"]
+        RedditTitle.text = "\(post!.title)"
+        RedditText.text = "\(post!.text)"
+        if RedditText.text! != ""{
+            transitionButton.isEnabled = true
+            curText = RedditText.text!
+        } else{
+            transitionButton.isEnabled = false
+        }
         var curImage = ("\(RedditInfo["post\(input)"]!.thumbnail)")
         var allKeys = (Array(RedditInfo.keys))
         let max = (allKeys.count - 1)
@@ -120,6 +117,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else{
             imageView.image = nil
         }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! TextViewController
+        vc.text = self.curText
     }
     
     
@@ -158,5 +161,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func error(){
+        hide()
+        RedditTitle.text = "Sub-Reddit Not Found!"
+        transitionButton.isEnabled = false
+    }
+    
+    func hide(){
+        RedditText.text = ""
+        imageView.image = nil
+        pageNumber.isHidden = true
+        stepper.isHidden = true
+    }
 }
 
